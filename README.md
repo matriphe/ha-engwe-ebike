@@ -4,7 +4,23 @@ Experimental custom integration for the ENGWE cloud API, based on observed traff
 
 ## Installation
 
-For a manual installation, copy `custom_components/engwe` to `<config>/custom_components/engwe`, restart Home Assistant, then add **ENGWE E-bike** under Settings → Devices & Services. This directory is structured for installation as a HACS custom integration after it is pushed to a suitable public GitHub repository. A local folder alone is not an installable HACS repository. No repository or marketplace listing exists yet.
+This integration is experimental and has not yet been verified on a Home Assistant installation. Authentication and the meaning and units of some sensor values are still being investigated.
+
+1. Install and configure HACS or Home Assistant Marketplace.
+2. Open this repository in HACS or Marketplace:
+
+   [![Open ENGWE E-bike in HACS or Marketplace](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=matriphe&repository=ha-engwe-ebike&category=integration)
+
+   Alternatively, in HACS open the three-dot menu, choose **Custom repositories**, add `https://github.com/matriphe/ha-engwe-ebike` as an **Integration**, and find **ENGWE E-bike**.
+3. Download the integration and restart Home Assistant.
+4. Start the integration setup:
+
+   [![Add ENGWE E-bike to Home Assistant](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=engwe)
+
+   Alternatively, choose **Settings → Devices & services → Add integration** and search for **ENGWE E-bike**. The button starts setup only after the integration is installed and Home Assistant has restarted.
+5. Enter your ENGWE account credentials directly in Home Assistant.
+
+For manual installation, copy `custom_components/engwe` to `<config>/custom_components/engwe`, restart Home Assistant, and follow steps 4–5.
 
 Enter your ENGWE account email and password in Home Assistant, not in chat. Home Assistant stores config entries in its configuration storage; protect backups. The integration discovers the first IoT bike returned by the account and polls every 10 minutes. The integration only sends login and observed bike listing and status requests; it does not expose control actions. POST endpoints have not yet been independently verified as read-only.
 
