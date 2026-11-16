@@ -1,6 +1,6 @@
 # ENGWE E-bike for Home Assistant
 
-Experimental custom integration for the ENGWE cloud API, based on observed traffic from an ENGWE L20 3.0 Pro. **Not yet verified against a running Home Assistant instance.** The login format and polling requests are inferred from traffic and may require additional headers or a transformed password.
+Experimental custom integration for the ENGWE cloud API, based on observed traffic from an [ENGWE L20 3.0 Pro](https://engwe.com/de/products/engwe-l20-3-0-pro?variant=44344941150265). **Not yet verified against a running Home Assistant instance.** The login format and polling requests are inferred from traffic and may require additional headers or a transformed password.
 
 ## Installation
 
