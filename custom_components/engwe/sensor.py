@@ -19,6 +19,14 @@ SENSORS = {
 }
 
 
+ICONS = {
+    "vehicleBatterySOH": "mdi:battery-heart-variant",
+    "pedallingRate": "mdi:bike",
+    "maxPedallingRate": "mdi:bike-fast",
+    "totalMileages": "mdi:map-marker-distance",
+}
+
+
 def numeric_attributes(data):
     """Extract numeric values while preserving missing data as unknown."""
     result = {}
@@ -52,6 +60,8 @@ class EngweSensor(CoordinatorEntity, SensorEntity):
         self._attr_name = name
         self._attr_native_unit_of_measurement = unit
         self._attr_device_class = device_class
+        if code in ICONS:
+            self._attr_icon = ICONS[code]
         self._attr_unique_id = f"{entry.entry_id}_{code}"
         self._attr_device_info = {"identifiers": {(DOMAIN, entry.entry_id)}, "name": "ENGWE E-bike", "manufacturer": "ENGWE"}
 
