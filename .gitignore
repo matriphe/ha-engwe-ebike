@@ -1,0 +1,48 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local environment and Home Assistant runtime data
+.env
+.env.*
+!.env.example
+.storage/
+.homeassistant/
+secrets.yaml
+secrets.yml
+home-assistant.log*
+home-assistant_v2.db*
+
+# Proxy captures, exports, and certificates
+.mitmproxy/
+*.mitm
+*.mitmproxy
+*.flow
+*.flows
+*.har
+*.pcap
+*.pcapng
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# Local logs and operating system files
+*.log
+.DS_Store
+
+# Local analysis material
+captures/
+screenshots/
+engwe-flow-summary.jsonl
+engwe-response-shapes.jsonl
+engwe-request-shapes.jsonl
+engwe-auth-shapes.jsonl
+engwe-attribute-catalog.json
