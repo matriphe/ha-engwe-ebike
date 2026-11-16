@@ -52,3 +52,5 @@ The cloud API is undocumented and may change. Bluetooth-only information and cer
 Do not commit Home Assistant `.storage`, backups, logs, proxy captures, HAR files, certificates, private keys, account credentials, tokens, device identifiers, or GPS coordinates. The `.gitignore` covers common filenames and extensions but cannot detect secrets in arbitrary files or existing Git history. Review all staged files and any existing history before publishing. Redact diagnostics and screenshots before sharing them.
 
 This project is an independent, experimental integration and is not affiliated with ENGWE. Do not use it to send control commands: only observed login, device listing, and status endpoints are implemented, and the effects of these POST endpoints still require verification.
+
+The integration icon uses a product image from [ENGWE](https://engwe.com/cdn/shop/files/L203.0PRO_1.jpg?v=1794548424&width=900). Product imagery belongs to its respective owner and is not covered by this project's MIT license.
