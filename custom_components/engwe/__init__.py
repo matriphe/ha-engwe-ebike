@@ -29,8 +29,13 @@ class EngweCoordinator(DataUpdateCoordinator):
             raise UpdateFailed("ENGWE request failed") from exc
         if not isinstance(payload, dict) or 'data' not in payload:
             raise UpdateFailed("Unexpected ENGWE response")
-        if payload.get('code') not in (0, 200, '0', '200', None):
-            raise UpdateFailed("ENGWE returned an application error")
+        code = payload.get('code')
+        if code not in (0, 200, '0', '200', None):
+            is_numeric_code = (type(code) is int and 0 <= code <= 999999999999) or (
+                isinstance(code, str) and code.isascii() and code.isdigit() and len(code) <= 12
+            )
+            safe_code = str(code) if is_numeric_code else 'unknown'
+            raise UpdateFailed(f"ENGWE API error at {path}: code {safe_code}")
         return payload['data']
 
     async def _async_update_data(self):
