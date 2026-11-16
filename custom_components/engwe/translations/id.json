@@ -1,0 +1,17 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Akun ENGWE",
+        "description": "Login di sini dapat mengeluarkan Anda dari aplikasi ENGWE di ponsel. Penggunaan sesi bersama belum diverifikasi.",
+        "data": {
+          "email": "Email",
+          "password": "Kata sandi"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Akun ini sudah dikonfigurasi."
+    }
+  }
+}

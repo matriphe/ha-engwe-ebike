@@ -1,1 +1,17 @@
-{"config":{"step":{"user":{"title":"ENGWE account","description":"Enter your ENGWE account credentials.","data":{"email":"Email","password":"Password"}}},"abort":{"already_configured":"This account is already configured."}}}
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "ENGWE account",
+        "description": "Signing in here may sign you out of the ENGWE app on your phone. A shared-session option has not been verified.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This account is already configured."
+    }
+  }
+}
