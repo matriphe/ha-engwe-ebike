@@ -40,10 +40,14 @@ class EngweCoordinator(DataUpdateCoordinator):
                 raise ConfigEntryAuthFailed('ENGWE login did not return a token')
             self.token = data['token']
         if not self.imei:
-            bikes = await self.request('/api/app/bike/user-ebike', {'isDefult': 1})
-            if not isinstance(bikes, list) or not bikes or not bikes[0].get('deviceImei'):
+            bikes = await self.request('/api/app/bike/user-ebike', {'isDefult': 0})
+            if not isinstance(bikes, list):
+                raise UpdateFailed('Unexpected bicycle list response')
+            iot_bikes = [bike for bike in bikes if isinstance(bike, dict) and bike.get('deviceImei')]
+            if not iot_bikes:
                 raise UpdateFailed('No IoT bicycle found on this account')
-            self.imei = bikes[0]['deviceImei']
+            selected = next((bike for bike in iot_bikes if bike.get('defultBike') == 1), iot_bikes[0])
+            self.imei = selected['deviceImei']
         attributes = await self.request('/api/app/iot/device/attr/newest', {'imei': self.imei})
         info = await self.request('/api/app/iot/device/basicInfo', {'imei': self.imei})
         if not isinstance(attributes, list) or not isinstance(info, dict):

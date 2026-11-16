@@ -22,7 +22,7 @@ This integration is experimental and has not yet been verified on a Home Assista
 
 For manual installation, copy `custom_components/engwe` to `<config>/custom_components/engwe`, restart Home Assistant, and follow steps 4–5.
 
-Enter your ENGWE account email and password in Home Assistant, not in chat. Home Assistant stores config entries in its configuration storage; protect backups. The integration discovers the first IoT bike returned by the account and polls every 10 minutes. The integration only sends login and observed bike listing and status requests; it does not expose control actions. POST endpoints have not yet been independently verified as read-only.
+Enter your ENGWE account email and password in Home Assistant, not in chat. Home Assistant stores config entries in its configuration storage; protect backups. The integration prefers the default IoT bike returned by the account, falling back to the first IoT bike, and polls every 10 minutes. The integration only sends login and observed bike listing and status requests; it does not expose control actions. POST endpoints have not yet been independently verified as read-only.
 
 ## Sensors
 
